@@ -11,9 +11,10 @@ const StyledUl = styled.ul`
   list-style-type: none;
 `;
 const Li = styled.li`
-  padding: 0.4rem 0.1rem 0.4rem 1rem;
+  padding: 0.4rem 0.2rem 0.4rem 0.2rem;
   display: flex;
   justify-content: space-between;
+  font-size: 1.05rem;
 `;
 
 export default function SBBookmarks({ editing }) {

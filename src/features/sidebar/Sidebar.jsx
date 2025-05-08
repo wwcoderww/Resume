@@ -6,7 +6,7 @@ import SBBookmarks from "./SBBookmarks";
 const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 15vw;
   background-color: blue;
   height: 100%;
 `;
