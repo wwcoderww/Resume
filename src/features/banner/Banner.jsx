@@ -1,7 +1,7 @@
 import React from "react";
 import BannerOption from "./BannerOption";
 import styled from "styled-components";
-import BannerDropDown from "./BannerDropDown";
+import BannerButton from "./BannerButton";
 
 const StyledMain = styled.main`
   display: flex;
@@ -13,7 +13,7 @@ const BannerContainer = styled.div`
   overflow: scroll;
 `;
 
-export default function Banner() {
+export default function Banner({ MainContentRef }) {
   return (
     <StyledMain>
       <BannerContainer>
@@ -22,7 +22,7 @@ export default function Banner() {
         <BannerOption />
         <BannerOption />
       </BannerContainer>
-      <BannerDropDown />
+      <BannerButton MainContentRef={MainContentRef} />
     </StyledMain>
   );
 }

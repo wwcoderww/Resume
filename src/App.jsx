@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import Sidebar from "./features/sidebar/Sidebar";
 import GlobalStyles from "./styles/GlobalFiles";
@@ -21,15 +21,16 @@ const queryClient = new QueryClient({
 });
 
 export default function App() {
+  const MainContentRef = useRef(null);
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <Container>
-        <Banner />
+        <Banner MainContentRef={MainContentRef} />
         <MainContent>
           <Sidebar />
-          <div>MainContent</div>
+          <div ref={MainContentRef}>MainContent</div>
         </MainContent>
       </Container>
     </QueryClientProvider>
