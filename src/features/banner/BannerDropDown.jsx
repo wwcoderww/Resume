@@ -9,13 +9,7 @@ const StyledContainer = styled.div`
   padding: 1rem 0 5rem 0;
 `;
 
-export default function BannerDropDown({ MainContentRef }) {
-  const startLocation = MainContentRef.current.getBoundingClientRect().y;
-
+export default function BannerDropDown() {
   //   const mainContentCords = MainContentRef.content.getBoundindClientRef();
-  return (
-    <StyledContainer style={{ top: `${startLocation}px` }}>
-      BannerDropDownaaaaaaaaaaaaa
-    </StyledContainer>
-  );
+  return <StyledContainer>BannerDropDownaaaaaaaaaaaaa</StyledContainer>;
 }

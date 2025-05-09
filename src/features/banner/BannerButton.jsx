@@ -9,7 +9,7 @@ const StyledIcon = styled.button`
   border: none;
 `;
 
-export default function BannerButton({ MainContentRef }) {
+export default function BannerButton() {
   const [toggleMenu, setToggleMenu] = useState(false);
   function handleClick() {
     setToggleMenu((x) => !x);
@@ -19,7 +19,7 @@ export default function BannerButton({ MainContentRef }) {
       <StyledIcon onClick={() => handleClick()}>
         <MdMenu />
       </StyledIcon>
-      {toggleMenu && <BannerDropDown MainContentRef={MainContentRef} />}
+      {toggleMenu && <BannerDropDown />}
     </>
   );
 }

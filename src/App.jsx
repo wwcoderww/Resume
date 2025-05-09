@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import Sidebar from "./features/sidebar/Sidebar";
 import GlobalStyles from "./styles/GlobalFiles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Banner from "./features/banner/Banner";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Budget from "./features/budget/Budget";
 
 // Styles
 const Container = styled.div`
@@ -19,18 +21,21 @@ const MainContent = styled.div`
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 60 * 1000 } },
 });
+// React Router
+const router = createBrowserRouter([{ path: "/", element: <Budget /> }]);
 
 export default function App() {
-  const MainContentRef = useRef(null);
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <Container>
-        <Banner MainContentRef={MainContentRef} />
+        <Banner />
         <MainContent>
           <Sidebar />
-          <div ref={MainContentRef}>MainContent</div>
+          <RouterProvider router={router}>
+            <div>MainContent</div>
+          </RouterProvider>
         </MainContent>
       </Container>
     </QueryClientProvider>

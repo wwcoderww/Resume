@@ -13,7 +13,7 @@ const BannerContainer = styled.div`
   overflow: scroll;
 `;
 
-export default function Banner({ MainContentRef }) {
+export default function Banner() {
   return (
     <StyledMain>
       <BannerContainer>
@@ -22,7 +22,7 @@ export default function Banner({ MainContentRef }) {
         <BannerOption />
         <BannerOption />
       </BannerContainer>
-      <BannerButton MainContentRef={MainContentRef} />
+      <BannerButton />
     </StyledMain>
   );
 }
