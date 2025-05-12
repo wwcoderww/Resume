@@ -15,6 +15,9 @@ const Li = styled.li`
   display: flex;
   justify-content: space-between;
   font-size: 1.05rem;
+  &:hover {
+    color: var(--main-color);
+  }
 `;
 const StyledDivider = styled.div`
   content: "";

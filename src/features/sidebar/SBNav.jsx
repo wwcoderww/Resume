@@ -9,6 +9,15 @@ const StyledMain = styled.main`
   padding: 0.1rem 0.1rem 0 0;
   gap: 0.2rem;
 `;
+const StyledButton = styled.button`
+  display: flex;
+  height: 1.425rem;
+  width: 1.5rem;
+  align-items: center;
+  &:hover {
+    border: 0.1rem solid;
+  }
+`;
 
 export default function SBNav({ setEditing }) {
   const [adding, setAdding] = useState(false);
@@ -17,12 +26,12 @@ export default function SBNav({ setEditing }) {
       {adding && <SBNavForm setAdding={setAdding} />}
       {!adding && (
         <StyledMain>
-          <button onClick={() => setAdding((x) => !x)}>
+          <StyledButton onClick={() => setAdding((x) => !x)}>
             <MdAdd />
-          </button>
-          <button onClick={() => setEditing((x) => !x)}>
+          </StyledButton>
+          <StyledButton onClick={() => setEditing((x) => !x)}>
             <MdEdit />
-          </button>
+          </StyledButton>
         </StyledMain>
       )}
     </div>

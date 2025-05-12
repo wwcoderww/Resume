@@ -13,6 +13,11 @@ const ItemInput = styled.input`
 const ItemButton = styled.button`
   max-width: 2rem;
   text-align: center;
+  &:hover {
+    border: 0.185rem solid var(--main-color);
+    border-radius: 0.2rem;
+    background-color: inherit;
+  }
 `;
 
 export default function ItemButtons() {
