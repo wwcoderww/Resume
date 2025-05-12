@@ -10,8 +10,11 @@ const LabelStyled = styled.div`
   display: flex;
   gap: 0.5rem;
 `;
+const StyledBudgetInput = styled.input`
+  width: 2.5rem;
+`;
 
-export default function Stats() {
+export default function Stats({ toggleEdit }) {
   return (
     <MainContainer>
       <LabelStyled>
@@ -24,7 +27,9 @@ export default function Stats() {
       </LabelStyled>
       <LabelStyled>
         <div>Budgeted:</div>
-        <BudgetData>$200</BudgetData>
+        <BudgetData>
+          {toggleEdit ? <StyledBudgetInput placeholder="$200" /> : `$200`}
+        </BudgetData>
       </LabelStyled>
     </MainContainer>
   );

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import BudgetItem from "./budgetitem/BudgetItem";
-import BudgetNav from "./BudgetNav";
+import NavBar from "./budgetnav/NavBar";
 import styled from "styled-components";
 
 const StyledMain = styled.div`
@@ -11,14 +11,15 @@ const StyledMain = styled.div`
 `;
 
 export default function Budget() {
+  const [toggleEdit, setToggleEdit] = useState(false);
   return (
     <StyledMain>
-      <BudgetNav />
-      <BudgetItem />
-      <BudgetItem />
-      <BudgetItem />
-      <BudgetItem />
-      <BudgetItem />
+      <NavBar setToggleEdit={setToggleEdit} />
+      <BudgetItem toggleEdit={toggleEdit} />
+      <BudgetItem toggleEdit={toggleEdit} />
+      <BudgetItem toggleEdit={toggleEdit} />
+      <BudgetItem toggleEdit={toggleEdit} />
+      <BudgetItem toggleEdit={toggleEdit} />
     </StyledMain>
   );
 }

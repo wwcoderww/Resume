@@ -1,21 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import ItemButtons from "./ItemButtons";
+import Form from "./Form";
 import Stats from "./Stats";
+import { MdDelete } from "react-icons/md";
 
 const ItemContainer = styled.div`
   display: flex;
   padding: 0.8rem 0.5rem;
-  border-bottom: 0.1rem solid;
-  max-width: 75%;
+  border-bottom: 0.1rem dashed;
+`;
+const StyledButton = styled.button`
+  margin-left: auto;
+  margin-right: 2rem;
 `;
 
-export default function BudgetItem() {
+export default function BudgetItem({ toggleEdit }) {
   return (
     <ItemContainer>
       <div>Item Name</div>
-      <ItemButtons />
-      <Stats />
+      <Form />
+      <Stats toggleEdit={toggleEdit} />
+      {toggleEdit && (
+        <StyledButton>
+          <MdDelete />
+        </StyledButton>
+      )}
     </ItemContainer>
   );
 }
