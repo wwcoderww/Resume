@@ -6,6 +6,7 @@ import BannerButton from "./BannerButton";
 const StyledMain = styled.main`
   display: flex;
   justify-content: space-between;
+  background-color: var(--main-color);
 `;
 const BannerContainer = styled.div`
   display: flex;

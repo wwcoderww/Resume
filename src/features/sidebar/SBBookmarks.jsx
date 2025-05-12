@@ -16,6 +16,12 @@ const Li = styled.li`
   justify-content: space-between;
   font-size: 1.05rem;
 `;
+const StyledDivider = styled.div`
+  content: "";
+  border-bottom: 0.1rem solid;
+  width: 95%;
+  margin: 0 auto;
+`;
 
 export default function SBBookmarks({ editing }) {
   const { data, isLoading } = useBookmarks();
@@ -28,18 +34,21 @@ export default function SBBookmarks({ editing }) {
       {isLoading && <div>Loading...</div>}
       {!isLoading &&
         data.map((bookMark) => (
-          <Li key={bookMark.name}>
-            <div>
-              <a href={bookMark.url} target="_blank">
-                {bookMark.name}
-              </a>
-            </div>
-            {editing && (
-              <button onClick={() => handleDelete(bookMark.id)}>
-                <MdDelete />
-              </button>
-            )}
-          </Li>
+          <>
+            <Li key={bookMark.name}>
+              <div>
+                <a href={bookMark.url} target="_self">
+                  {bookMark.name}
+                </a>
+              </div>
+              {editing && (
+                <button onClick={() => handleDelete(bookMark.id)}>
+                  <MdDelete />
+                </button>
+              )}
+            </Li>
+            <StyledDivider />
+          </>
         ))}
     </StyledUl>
   );

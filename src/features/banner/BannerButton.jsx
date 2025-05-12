@@ -7,6 +7,7 @@ const StyledIcon = styled.button`
   font-size: 2.3rem;
   align-self: center;
   border: none;
+  background-color: var(--main-color);
 `;
 
 export default function BannerButton() {

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const BannerOptionStyle = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
   font-size: 1.5rem;
   text-align: center;
   align-self: center;

@@ -7,7 +7,7 @@ const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   width: 15vw;
-  background-color: var(--main-background-color);
+  background-color: var(--secondary-color);
   height: 100%;
 `;
 
