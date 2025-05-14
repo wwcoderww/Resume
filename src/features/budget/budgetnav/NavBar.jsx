@@ -40,7 +40,7 @@ export default function BudgetNav({ setToggleEdit }) {
           <StyledNavOptions>Previously Spent</StyledNavOptions>
         </div>
       </StyledMain>
-      {addingItem && <Form />}
+      {addingItem && <Form setAddingItem={setAddingItem} />}
       <Stats />
     </>
   );

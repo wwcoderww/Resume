@@ -14,8 +14,8 @@ const StyledSeperator = styled.div`
   gap: 0.25rem;
 `;
 
-export default function Form() {
-  const { register, handleSubmit, getValues } = useForm();
+export default function Form({ setAddingItem }) {
+  const { register, handleSubmit, getValues, reset } = useForm();
   const mutate = postItem();
   function formSubmit() {
     const newItem = {
@@ -25,6 +25,8 @@ export default function Form() {
       available: Number(getValues().budgeted),
     };
     mutate(newItem);
+    reset();
+    setAddingItem(false);
   }
   return (
     <StyledForm onSubmit={handleSubmit(formSubmit)}>
