@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import loadBudget from "../useGetBudget";
+import currencyConvert from "../../../util/currencyConverter";
 
 const StyledMain = styled.div`
   border-bottom: 0.1rem solid;
@@ -11,10 +13,15 @@ const StyledMain = styled.div`
 `;
 
 export default function Stats() {
+  const data = loadBudget();
   return (
     <StyledMain>
-      <div>Remaining To Budget: $0</div>
-      <div>Total Budget This Week: $500</div>
+      {data && (
+        <>
+          <div>Remaining To Budget: {currencyConvert(data[0].unBudgeted)}</div>
+          <div>Total Budget This Week: {currencyConvert(data[0].budgeted)}</div>
+        </>
+      )}
     </StyledMain>
   );
 }

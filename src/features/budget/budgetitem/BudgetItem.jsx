@@ -13,13 +13,16 @@ const StyledButton = styled.button`
   margin-left: auto;
   margin-right: 2rem;
 `;
+const StyledItemName = styled.div`
+  width: 6rem;
+`;
 
-export default function BudgetItem({ toggleEdit }) {
+export default function BudgetItem({ item, toggleEdit }) {
   return (
     <ItemContainer>
-      <div>Item Name</div>
+      <StyledItemName>{item.name}</StyledItemName>
       <Form />
-      <Stats toggleEdit={toggleEdit} />
+      <Stats item={item} toggleEdit={toggleEdit} />
       {toggleEdit && (
         <StyledButton>
           <MdDelete />

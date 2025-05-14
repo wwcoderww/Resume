@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import BudgetItem from "./budgetitem/BudgetItem";
 import NavBar from "./budgetnav/NavBar";
-import styled from "styled-components";
+import loadData from "./useGetItems";
 
 const StyledMain = styled.div`
   display: flex;
@@ -12,14 +13,14 @@ const StyledMain = styled.div`
 
 export default function Budget() {
   const [toggleEdit, setToggleEdit] = useState(false);
+  const data = loadData();
   return (
     <StyledMain>
       <NavBar setToggleEdit={setToggleEdit} />
-      <BudgetItem toggleEdit={toggleEdit} />
-      <BudgetItem toggleEdit={toggleEdit} />
-      <BudgetItem toggleEdit={toggleEdit} />
-      <BudgetItem toggleEdit={toggleEdit} />
-      <BudgetItem toggleEdit={toggleEdit} />
+      {data &&
+        data.map((item) => (
+          <BudgetItem item={item} toggleEdit={toggleEdit} key={item.id} />
+        ))}
     </StyledMain>
   );
 }

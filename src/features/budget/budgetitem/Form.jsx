@@ -26,6 +26,9 @@ const StyledForm = styled.form`
 const StyledSubmitButton = styled.button`
   margin-left: 1rem;
 `;
+const StyledNoteInput = styled.input`
+  max-width: 5rem;
+`;
 
 export default function ItemButtons() {
   const [toggleAdd, setToggleAdd] = useState(false);
@@ -63,7 +66,7 @@ export default function ItemButtons() {
       {showForm && (
         <>
           <label htmlFor="notes">Notes:</label>
-          <input type="text" name="notes" placeholder="Optional" />
+          <StyledNoteInput type="text" name="notes" placeholder="Optional" />
           <StyledSubmitButton>Add</StyledSubmitButton>
         </>
       )}

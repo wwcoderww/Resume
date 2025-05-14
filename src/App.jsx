@@ -25,8 +25,8 @@ const queryClient = new QueryClient({
 });
 // React Router
 const router = createBrowserRouter([
-  { path: "/", element: <Budget /> },
-  { path: "/bookmarks", element: <MoreBookmarks /> },
+  { path: "/", element: <MoreBookmarks /> },
+  { path: "/budget", element: <Budget /> },
 ]);
 
 export default function App() {

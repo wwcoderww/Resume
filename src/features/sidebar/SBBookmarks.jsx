@@ -10,7 +10,7 @@ const StyledUl = styled.ul`
   padding: 0;
   list-style-type: none;
 `;
-const Li = styled.li`
+const StyledDiv = styled.div`
   padding: 0.4rem 0.2rem 0.4rem 0.2rem;
   display: flex;
   justify-content: space-between;
@@ -37,8 +37,8 @@ export default function SBBookmarks({ editing }) {
       {isLoading && <div>Loading...</div>}
       {!isLoading &&
         data.map((bookMark) => (
-          <>
-            <Li key={bookMark.name}>
+          <li key={bookMark.id}>
+            <StyledDiv>
               <div>
                 <a href={bookMark.url} target="_self">
                   {bookMark.name}
@@ -49,9 +49,9 @@ export default function SBBookmarks({ editing }) {
                   <MdDelete />
                 </button>
               )}
-            </Li>
-            <StyledDivider />
-          </>
+            </StyledDiv>
+            <StyledDivider key={bookMark.name} />
+          </li>
         ))}
     </StyledUl>
   );
