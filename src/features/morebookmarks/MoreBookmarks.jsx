@@ -21,7 +21,9 @@ export default function MoreBookmarks() {
         <Bookmark link={"https://tailwindcss.com/"}>Tailwind</Bookmark>
       </StyledUl>
       <StyledUl>
-        <Bookmark>Aa</Bookmark>
+        <Bookmark link={"https://www.theodinproject.com/dashboard"}>
+          The Odin Project
+        </Bookmark>
       </StyledUl>
     </MainContainer>
   );
