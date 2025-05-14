@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Form from "./Form";
 import Stats from "./Stats";
 import { MdDelete } from "react-icons/md";
+import deleteItem from "../useDelItem";
 
 const ItemContainer = styled.div`
   display: flex;
@@ -18,13 +19,15 @@ const StyledItemName = styled.div`
 `;
 
 export default function BudgetItem({ item, toggleEdit }) {
+  const mutate = deleteItem();
+
   return (
     <ItemContainer>
       <StyledItemName>{item.name}</StyledItemName>
       <Form />
       <Stats item={item} toggleEdit={toggleEdit} />
       {toggleEdit && (
-        <StyledButton>
+        <StyledButton onClick={() => mutate(item.id)}>
           <MdDelete />
         </StyledButton>
       )}

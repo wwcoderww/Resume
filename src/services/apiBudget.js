@@ -17,7 +17,13 @@ export async function addItem(obj) {
   }
 }
 
-// export async function delItem(id) {}
+export async function delItem(id) {
+  const { error } = await supabase.from("budget").delete().eq("id", id);
+  if (error) {
+    alert(`Error retriving Data`);
+    return console.log(error);
+  }
+}
 
 export async function totalBudget() {
   const { data, error } = await supabase.from("budgetTotal").select("*");
